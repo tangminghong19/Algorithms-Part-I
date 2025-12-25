@@ -51,6 +51,7 @@ public class Percolation {
         }
 
         // Connect to neighbours
+        // Always runs exactly 4 times, regardless of n (O(1))
         int[][] neighbours = {{row-1, col}, {row+1, col}, {row, col-1}, {row, col+1}};
         for (int[] neighbour : neighbours) {
             int r = neighbour[0];

@@ -3,10 +3,11 @@ import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats {
 
-    private final double[] results;
-    private final int trials;
     private static final double CONFIDENCE_95 = 1.96;
 
+    private final double[] results;
+    private final int trials;
+    
     // perform independent trials on an n-by-n grid
     public PercolationStats(int n, int trials) {
         if (n <= 0 || trials <= 0) throw new IllegalArgumentException();
