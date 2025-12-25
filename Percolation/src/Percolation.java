@@ -1,4 +1,5 @@
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+import edu.princeton.cs.algs4.StdRandom;
 
 public class Percolation {
 
@@ -83,6 +84,13 @@ public class Percolation {
 
     // test client
     public static void main(String[] args) {
-
+        int n = Integer.parseInt(args[0]);
+        Percolation perc = new Percolation(n);
+        while (!perc.percolates()) {
+            int r = StdRandom.uniformInt(1, n + 1);
+            int c = StdRandom.uniformInt(1, n + 1);
+            perc.open(r, c);
+        }
+        System.out.println("Percolated at " + perc.numberOfOpenSites() + " open sites.");
     }
 }
